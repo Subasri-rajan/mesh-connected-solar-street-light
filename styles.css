@@ -1,0 +1,359 @@
+/* Global styles */
+body {
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: normal;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(135deg, #e0f7fa 25%, #80deea 100%);
+    background-attachment: fixed;
+    width: auto;
+    height: auto;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* Menu bar styles */
+.menu-bar {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-family: "Poetsen One", sans-serif;
+    text-transform: uppercase;
+}
+
+.menu-bar .logo {
+    padding: 15px;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.menu li:last-child {
+    margin-right: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 3px;
+}
+
+/* Dashboard styles */
+.dashboard {
+    padding: 20px;
+    margin-top: 10%;
+}
+
+/* Switch button styles */
+.switch-holder {
+    display: flex;
+    width: 205px;
+    height: 40px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: -8px -8px 15px lightgrey, 10px 10px 10px rgba(111, 108, 108, 0.2), inset 8px 8px 15px rgba(255, 255, 255, .7);
+    justify-content: center;
+    align-items: center;
+}
+
+.switch-label {
+    padding: 0 20px 0 10px;
+    font-family: "Poetsen One", sans-serif;
+}
+
+.switch-label i {
+    margin-right: 5px;
+}
+
+.switch-toggle {
+    height: 40px;
+}
+
+.switch-toggle input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -2;
+}
+
+.switch-toggle input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0;
+    cursor: pointer;
+    box-shadow: inset -8px -8px 15px rgba(255, 255, 255, .6), inset 10px 10px 10px rgba(0, 0, 0, .25);
+}
+
+.switch-toggle input[type="checkbox"] + label::before {
+    position: absolute;
+    content: 'OFF';
+    font-size: 13px;
+    font-family: "Poetsen One", sans-serif;
+    text-align: center;
+    line-height: 25px;
+    top: 8px;
+    left: 8px;
+    width: 45px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #E4000F;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5), 3px 3px 5px rgba(0, 0, 0, .25);
+    transition: .3s ease-in-out;
+}
+
+.switch-toggle input[type="checkbox"]:checked + label::before {
+    left: 50%;
+    content: 'ON';
+    color: #fff;
+    background-color: #00b33c;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5), 3px 3px 5px #00b33c;
+}
+
+/* LED bulb styles */
+.led-bulb {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff, #ddd, #bbb);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5) inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.led-bulb.on {
+    background: radial-gradient(circle at 50% 30%, rgba(255, 255, 204, 0.9), rgba(255, 255, 153, 0.5), rgba(255, 255, 0, 0.2));
+    box-shadow: 0 10px 40px rgba(248, 248, 25, 0.8), 0 0 20px rgba(238, 238, 52, 0.8) inset;
+}
+
+.inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_display {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30%;
+    align-items: center;
+}
+
+.border_box {
+    border-radius: 30px;
+    background: #bee7ef;
+    box-shadow: 23px 23px 47px #a2c4cb, -23px -23px 47px #dbffff;
+    padding: 15px;
+}
+
+/* Serial monitor styles */
+.open-monitor-btn {
+    font-size: 16px;
+    font-family: "Poetsen One", sans-serif;
+    padding: 15px 20px;
+    background-color: #181717;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.open-monitor-btn:hover{
+    background-color: #87898b; /* Darker shade of blue on hover */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: modalFadeIn 0.5s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #b61414;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h1 {
+    color: #070707;
+    font-size: 22px;
+    font-family: "Poetsen One", sans-serif;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.monitor {
+    width: 260px;
+    height: 160px;
+    border: 2px solid #00796b;
+    background: #f0f4f8;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin: 2px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.row:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+span {
+    font-weight: bold;
+    color: #00796b;
+}
+/* Status card styles */
+.status-card {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: "Poetsen One", sans-serif;
+    text-align: center;
+}
+
+.status-card.working {
+    background-color: palegreen;
+    color: #006400;
+}
+
+.status-card.not-working {
+    background-color: palevioletred;
+    color: #8b0000;
+}
+
+
+body {
+    background-color: #f0f0f0; /* Light background color */
+    font-family: Arial, sans-serif; /* Choose an elegant font */
+}
+
+.input-group {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    z-index: 9999;
+    display: inline-block; /* Make sure the container wraps its content */
+}
+
+.input-group input {
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 50px; /* Perfectly round shape */
+    font-size: 16px;
+    font-family: "Poetsen One", sans-serif;
+    width: 250px;
+    outline:#000000; /* Remove the default input focus outline */
+    transition: border-color 0.3s ease;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    color: #000000; /* White text color */
+}
+
+.input-group .submit-button {
+    position: fixed;
+    top: 102px;
+    right: 12px;
+    padding: 15px 25px;
+    background-color: #181717;
+    color: #a39f9f;
+    border: none;
+    border-radius: 50px; /* Perfectly round shape */
+    font-size: 16px;
+    font-family: "Poetsen One", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: -60px; /* Adjust this value to position the button inside the input */
+}
+
+.input-group .submit-button span {
+    color: #ffffff; /* White text color */
+}
+
+.input-group .submit-button:hover {
+    background-color: #87898b; /* Darker shade of blue on hover */
+}
